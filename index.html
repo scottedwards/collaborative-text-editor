@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta charset="utf-8"/>
+        <title>Scott's Python IDE</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+        <script src="js/run_code.js"></script>
+        <script src="js/sync_txtboxes.js"></script>
+    </head>
+    <body>
+        <div id="top-bar" class="page-header">
+            <h1>Collaborative Python Editor</h1>
+
+        </div>
+        <div id="code-bit" class="row">
+            <div id="editor" class="col-md-8">
+                <h2>Code</h2>
+                <input id="btn-load" type = "submit" value="Load Code"/>
+                <input id="btn-save" type = "submit" value="Save Code"/>
+                <form id="run-form" action="php/run_code.php" method="post">
+                    <input id="pswd" name="password" type="password" placeholder="Enter the password to run">
+                    <input type="submit" value="Run">
+                    <textarea name="program-code" id="t-editor"></textarea>
+                </form>
+            </div>
+            <div id="output" class="col-md-4">
+                <h2>Output</h2>
+                <pre id="code-output">Ouput will appear here</pre>
+            </div>
+        </div>
+        <div id="footer" class="row">
+            <div class="col-md-12">
+                <p> Made by Scott Edwards (2018)</p>
+            </div>
+        </div>
+    </body>
+</html>
