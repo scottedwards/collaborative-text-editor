@@ -1,10 +1,4 @@
 <?php
-
-function br2nl($string)
-{
-    return preg_replace('/\<br(\s*)?\/?\>/i', "\n", $string);
-}
-
 if ($_POST["password"] == "python") {
     $program_code =  $_POST["program-code"];
     $myfile = fopen("../code/input_code.py", "w") or die("Unable to open file!");
