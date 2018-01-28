@@ -1,33 +1,40 @@
 <!doctype html>
+<!-- See http://www.firepad.io/docs/ for detailed embedding docs. -->
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <meta charset="utf-8"/>
+        <meta charset="utf-8" />
         <title>Scott's Python IDE</title>
+        <script src="js/firepad_init.js"></script>
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+        <!-- ACE and its JavaScript mode and theme files -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/mode-javascript.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/theme-textmate.js"></script>
+
+        <!-- Firepad -->
+        <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+        <script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/index.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
-        <script src="js/run_code.js"></script>
-        <script src="js/sync_txtboxes.js"></script>
     </head>
-    <body>
+    <body onload="init()">
         <div id="top-bar" class="page-header">
             <h1>Collaborative Python Editor</h1>
-
         </div>
         <div id="code-bit" class="row">
             <div id="editor" class="col-md-8">
                 <h2>Code</h2>
-                <input id="btn-load" type = "submit" value="Load Code"/>
-                <input id="btn-save" type = "submit" value="Save Code"/>
-                <form id="run-form" action="php/run_code.php" method="post">
-                    <input id="pswd" name="password" type="password" placeholder="Enter the password to run">
-                    <input type="submit" value="Run">
-                    <textarea name="program-code" id="t-editor"></textarea>
-                </form>
+                <input id="pswd" name="password" type="password" placeholder="Enter the password to run">
+                <input type="submit" id="run-code" value="Run">
+                <div id="firepad-container"></div>
             </div>
             <div id="output" class="col-md-4">
                 <h2>Output</h2>

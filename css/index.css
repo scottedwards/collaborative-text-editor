@@ -1,19 +1,28 @@
-html, body {
+html { 
+    height: 100%; 
+    padding: 0;
 }
 
-html {
-    background-color: #77BB77;
+body { 
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    position: relative; 
+}
+
+/* Height / width / positioning can be customized for your use case.
+   For demo purposes, we make firepad fill the entire browser. */
+#firepad-container {
+    width: 100%;
+    height: 100%;
 }
 
 #top-bar {
-    height: 100px;
     text-align: center;
     border-bottom: 1px solid black;
     background-color: #77BB77;
-}
-
-#run-form {
-    height: 550px; 
+    margin:0;
+    padding: 20px;
 }
 
 input {
@@ -33,12 +42,12 @@ input {
 #code-bit {
     height: 100%;
     border-bottom: 1px solid black;
+    margin: 0;
 }
 
 #editor {
-    height: 550px;
-    padding-left: 5%;
-    background-color: #FFF;
+    height: 600px;
+    padding-left: 1%;
     border-right: 1px dashed black;
 }
 
@@ -48,19 +57,20 @@ input {
     }
 }
 
-
-#t-editor {
-    border: 1px solid black;
-    width: 98%;
-    height: 350px;
-}
-
 #output {
     background-color: #FFF;
+    height: 600px;
 }
 
 #footer {
     padding: 10px;
+    margin: 0;
     text-align: center;
+    background-color: #FFF;
     background-color: #77BB77;
+}
+.firepad {
+  width: 700px;
+  height: 450px;
+  background-color: #f62; /* dark orange background */
 }
