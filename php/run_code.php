@@ -1,5 +1,5 @@
 <?php
-if ($_POST["password"] == "python") {
+if ($_POST["password"] == "<insert_password_here>") {
     $program_code =  $_POST["program-code"];
     $myfile = fopen("../code/input_code.py", "w") or die("Unable to open file!");
     fwrite($myfile, $program_code);
